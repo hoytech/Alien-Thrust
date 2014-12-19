@@ -38,7 +38,7 @@ sub ACTION_install {
     my $share_install_dir = $self->install_map->{'blib/lib'} . "/auto/share/dist/Alien-Thrust/";
 
     system('mkdir', '-p', $share_install_dir);
-    system('unzip', '-uqq', $thrust_archive, '-d', $share_install_dir);
+    system('unzip', '-oqq', $thrust_archive, '-d', $share_install_dir);
   } else {
     $self->SUPER::ACTION_install;
   }
@@ -95,7 +95,7 @@ sub extract_zip_file {
 
   if ($^O =~ /darwin/i) {
     ## Archive::Extract appears to break ThrustShell.App - maybe doesn't extract some meta-data or something?
-    system("unzip -uqq $thrust_archive -d blib/lib/auto/share/dist/Alien-Thrust/");
+    system("unzip -oqq $thrust_archive -d blib/lib/auto/share/dist/Alien-Thrust/");
   } else {
     require Archive::Extract;
 
