@@ -4,7 +4,13 @@ our $VERSION = '0.100';
 
 use File::ShareDir;
 
-our $thrust_shell_binary = File::ShareDir::dist_dir('Alien-Thrust') . "/thrust_shell";
+our $thrust_shell_binary;
+
+if ($^O =~ /darwin/i) {
+  $thrust_shell_binary = File::ShareDir::dist_dir('Alien-Thrust') . "/ThrustShell.app/Contents/MacOS/ThrustShell";
+} else {
+  $thrust_shell_binary = File::ShareDir::dist_dir('Alien-Thrust') . "/thrust_shell";
+}
 
 1;
 
