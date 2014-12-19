@@ -59,6 +59,7 @@
 
 # Avoid configuration metadata file
 ^MYMETA\.
+^META\.
 
 # Avoid Module::Build generated and utility files.
 \bBuild$
