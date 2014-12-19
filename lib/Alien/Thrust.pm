@@ -51,4 +51,7 @@ Copyright 2014 Doug Hoyte.
 
 This module is licensed under the same terms as perl itself.
 
+This perl distribution downloads compiled binaries of the Thrust project which is Copyright (c) Stanislas Polu and licensed under the MIT license.
+
+
 =cut
