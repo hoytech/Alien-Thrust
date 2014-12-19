@@ -1,8 +1,11 @@
 Build
 MYMETA.json
 MYMETA.yml
+META.json
+META.yml
 _build/
 blib/
 thrust.zip
 MANIFEST.bak
 MANIFEST.SKIP.bak
+Alien-Thrust-*.tar.gz
