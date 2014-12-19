@@ -12,6 +12,7 @@ my $build = ThrustModuleBuild->new(
     'Module::Build' => 0,
   },
   build_requires => {
+    'Module::Build' => 0,
     'LWP::UserAgent' => 0,
     'Mozilla::CA' => 0,
     'Archive::Extract' => 0,
