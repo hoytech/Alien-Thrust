@@ -15,9 +15,12 @@ my $build = ThrustModuleBuild->new(
     'Module::Build' => 0,
     'LWP::UserAgent' => 0,
     'Mozilla::CA' => 0,
-    'Archive::Extract' => 0,
     'Test::More' => 0,
     'IPC::Open2' => 0,
+    'File::Spec::Functions' => 0,
+    'IO::File' => 0,
+    'IO::Uncompress::Unzip' => 0,
+    'File::Path' => 0,
   },
   requires => {
     'File::ShareDir' => 0,
