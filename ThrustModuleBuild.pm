@@ -61,6 +61,11 @@ sub download_zip_file {
   if ($^O =~ /linux/i) {
     $os = 'linux';
     $arch = length(pack("P", 0)) == 8 ? 'x64' : 'ia32';
+
+    if ($arch eq 'ia32') {
+      die "32bit linux is not supported";
+    }
+
   } elsif ($^O =~ /darwin/i) {
     $os = 'darwin';
     $arch = 'x64';
