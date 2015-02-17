@@ -14,6 +14,7 @@ my $build = ThrustModuleBuild->new(
   build_requires => {
     'Module::Build' => 0,
     'LWP::UserAgent' => 0,
+    'LWP::Protocol::https' => 0,
     'Mozilla::CA' => 0,
     'Test::More' => 0,
     'IPC::Open2' => 0,
