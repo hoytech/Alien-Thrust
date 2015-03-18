@@ -45,6 +45,8 @@ L<Official Thrust website|https://github.com/breach/thrust>
 
 Doug Hoyte, C<< <doug@hcsw.org> >>
 
+Justin Pacheco
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2014 Doug Hoyte.
