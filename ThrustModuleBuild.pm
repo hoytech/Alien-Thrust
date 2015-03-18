@@ -56,8 +56,6 @@ sub download_zip_file {
 
   my ($os, $arch);
 
-  require LWP::UserAgent;
-
   if ($^O =~ /linux/i) {
     $os = 'linux';
     $arch = length(pack("P", 0)) == 8 ? 'x64' : 'ia32';
@@ -83,15 +81,25 @@ sub download_zip_file {
   if (-e $thrust_archive) {
     print "$thrust_archive already exists, skipping download\n";
   } else {
-    unlink("$thrust_archive.partial");
-
     print "Downloading $thrust_zipfile_url (be patient)\n";
 
-    my $ua = new LWP::UserAgent;
-    my $res = $ua->get($thrust_zipfile_url, ':content_file' => "$thrust_archive.partial");
+    if (system(qw/wget -c -O/, "$thrust_archive.partial", $thrust_zipfile_url)) {
+      if (-e "$thrust_archive.partial") {
+        ## wget started the download but probably user hit control-c
+        die "download failed, aborting";
+      }
 
-    if (!$res->is_success) {
-      die "Failed to download $thrust_zipfile_url : " . $res->status_line;
+      print "unable to run wget, trying LWP::UserAgent\n";
+
+      unlink("$thrust_archive.partial");
+      require LWP::UserAgent;
+
+      my $ua = new LWP::UserAgent;
+      my $res = $ua->get($thrust_zipfile_url, ':content_file' => "$thrust_archive.partial");
+
+      if (!$res->is_success) {
+        die "Failed to download $thrust_zipfile_url : " . $res->status_line;
+      }
     }
 
     rename("$thrust_archive.partial", $thrust_archive) || die "unable to rename $thrust_archive.partial to $thrust_archive ($!)";
