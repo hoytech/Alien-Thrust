@@ -72,6 +72,8 @@ sub download_zip_file {
   } elsif ($^O =~ /mswin/i) {
     $os = 'win32';
     $arch = 'ia32';
+
+    die "windows is not yet supported, see https://github.com/hoytech/Thrust/issues/1  (but we think we're close)";
   } else {
     die "Your platform is currently not supported by Thrust";
   }
