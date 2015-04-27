@@ -22,6 +22,10 @@ __END__
 
 Alien::Thrust - Download and install the Thrust cross-platform GUI framework
 
+=head1 DEPRECATED
+
+B<DEPRECATION NOTE>: I do not plan on developing this module any further. Please see L<Valence> and L<Alien::Electron> instead. Thanks.
+
 =head1 DESCRIPTION
 
 This package will download a zip file containing the L<Thrust cross-platform, cross-language GUI toolkit|https://github.com/breach/thrust> and will then install it into its private distribution share directory.
