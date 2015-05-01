@@ -4,3 +4,5 @@ lib/Alien/Thrust.pm
 MANIFEST			This list of files
 t/runs.t
 ThrustModuleBuild.pm
+META.yml
+META.json
