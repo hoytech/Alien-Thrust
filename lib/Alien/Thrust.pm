@@ -33,6 +33,10 @@ The location of the binary is stored in the C<$Alien::Thrust::thrust_shell_binar
 
 Note however that you probably want to use the L<Thrust> module instead of accessing the binary directly.
 
+Also, Thrust itself is not being further developed by its authors. You 
+might want to look at L<Electron|http://electron.atom.io/> and L<Alien::Electron>
+for a still-active alternative.
+
 =head1 SEE ALSO
 
 L<Alien::Thrust github repo|https://github.com/hoytech/Alien-Thrust>
@@ -41,7 +45,7 @@ L<Thrust> perl interface
 
 L<Official Thrust website|https://github.com/breach/thrust>
 
-L<Valence> and L<Alien::Electron> provide a similar solution using github's electron tool-kit.
+L<Valence> and L<Alien::Electron> provide a similar solution using github's L<electron|http://electron.atom.io> tool-kit.
 
 =head1 AUTHOR
 
